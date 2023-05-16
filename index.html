@@ -83,7 +83,16 @@
           </form>
           <div class="preview">
             <h3 class="preview__header">Podgląd</h3>
-            <div class="preview__container"></div>
+            <div class="preview__container">
+              <div class="preview__container--tshirts"></div>
+              <div class="preview__container--label">
+                <img
+                  class="img__logo--preview hidden"
+                  src="https://picsum.photos/200"
+                  alt="tshirt-label"
+                />
+              </div>
+            </div>
           </div>
           <div class="btns">
             <button class="btn btn--next" type="button">Dalej</button>
@@ -97,7 +106,30 @@
               Możesz zachować wylosowaną grafikę z Kroku 1 lub wylosować inną.
             </p>
           </div>
-          <form></form>
+          <form>
+            <div class="gallery">
+              <div class="gallery__container">
+                <div class="gallery__img">
+                  <img
+                    id="selected-img"
+                    src="https://picsum.photos/200"
+                    alt="Random Image"
+                  />
+                </div>
+                <div class="gallery__nav">
+                  <button class="gallery__nav--prev" type="button">
+                    Poprzednie
+                  </button>
+                  <button class="gallery__nav--spin" type="button">
+                    Losuj inny
+                  </button>
+                  <button class="gallery__nav--next" type="button">
+                    Następne
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
           <div class="btns">
             <button class="btn btn--prev" type="button">Cofnij</button>
             <button class="btn btn--next" type="button">
