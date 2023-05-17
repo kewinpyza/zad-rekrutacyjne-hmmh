@@ -30,6 +30,13 @@ const streetInput = document.getElementById("street");
 const buildingNumInput = document.getElementById("bNumber");
 const flatNumInput = document.getElementById("fNumber");
 
+const summaryPlans = document.querySelectorAll(".summary__plans");
+const summaryDetails = document.querySelectorAll(".summary__details");
+const planCardFront = document.querySelector(".plan__card--front");
+const planCardBack = document.querySelector(".plan__card--back");
+const totalPrice = document.querySelector(".summary__total--price b");
+const totalDetailsPrice = document.querySelector(".summary__details--price b");
+
 let currentStep = 1;
 let currentCircle = 0;
 const state = {
@@ -54,6 +61,10 @@ steps.forEach((step, i) => {
 
   if (prevBtn) {
     prevBtn.addEventListener("click", () => {
+      if (currentStep === 4) {
+        summaryPlans.forEach((el) => (el.innerHTML = ""));
+        summaryDetails.forEach((el) => (el.innerHTML = ""));
+      }
       goPreviousPage(steps);
     });
   }
@@ -70,6 +81,7 @@ steps.forEach((step, i) => {
       if (isEmailValid && isZipCodeValid && isPhoneValid && isFormValid) {
         saveDataInObject();
         goNextPage(steps);
+        displayFormDetails();
       }
     } else {
       goNextPage(steps);
@@ -334,6 +346,47 @@ function saveDataInObject() {
   state.postalCode = zipCodeInput.value.trim();
   state.phone = phoneInput.value.trim();
   state.email = emailInput.value.trim();
+}
+
+function displayFormDetails() {
+  const html1 = `
+        <div class="summary__plan">
+          <p class="summary__plan--name">T-shirt - Nadruk (Przód)</p>
+          <p class="summary__plan--price">10.00</p>
+        </div>
+    `;
+
+  const html2 = `
+        <div class="summary__plan">
+          <p class="summary__plan--name">T-shirt - Nadruk (Tył)</p>
+          <p class="summary__plan--price">10.00</p>
+        </div>
+    `;
+
+  if (planCardFront.classList.contains("selected")) {
+    summaryPlans.forEach((el) => el.insertAdjacentHTML("beforeend", html1));
+  }
+  if (planCardBack.classList.contains("selected")) {
+    summaryPlans.forEach((el) => el.insertAdjacentHTML("beforeend", html2));
+  }
+
+  const html3 = `
+    <div class="summary__details--header">Dane zamawiającego:</div>
+    <div class="summary__details--name">${state.firstName} ${
+    state.lastName
+  }</div>
+    <div class="summary__details--address">
+      ${state.city}, ul.${state.street} ${state.buildingNumber}${
+    state.flatNumber ? "/" + state.flatNumber : ""
+  }, ${state.postalCode}
+    </div>
+    <div class="summary__details--more">
+      ${state.phone ? "Tel: " + state.phone + ", " : ""}Email: ${state.email}
+    </div>
+  `;
+  summaryDetails.forEach((el) => el.insertAdjacentHTML("beforeend", html3));
+  totalPrice.textContent = state.price.toFixed(2);
+  totalDetailsPrice.textContent = state.price.toFixed(2);
 }
 
 // function validateTextInputs(arr) {
