@@ -29,8 +29,8 @@ img {
 }
 
 .form {
-  max-width: 900px;
-  width: 80%;
+  max-width: 800px;
+  width: 90%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   border-radius: 1rem;
   background-color: #fff;
@@ -38,13 +38,13 @@ img {
 
 .form__container {
   display: flex;
-  gap: 2rem;
+  gap: 1.4rem;
   padding: 1rem;
 }
 
 .form__sidebar {
   background: linear-gradient(45deg, #013d7d, #00b7ff);
-  width: 32rem;
+  width: 30rem;
   height: 60rem;
   padding: 4rem 2rem;
   display: flex;
@@ -58,6 +58,7 @@ img {
   flex-direction: column;
   justify-content: center;
   display: none;
+  position: relative;
 }
 
 .form__step:nth-of-type(2) {
@@ -99,26 +100,61 @@ img {
   gap: 1rem;
 }
 
-.form__step form input {
-  padding: 1.2rem;
+.form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  grid-column: span 8;
+  justify-items: baseline;
+}
+
+.form__field--bnum {
+  grid-column: span 6;
+}
+
+.form__field--zipcode {
+  grid-row: 3;
+  grid-column: span 7;
+}
+
+.form__field--phone {
+  grid-column: span 7;
+}
+
+.form__field--city, .form__field--email {
+  grid-column: span 10;
+}
+
+.form__field input {
+  font-size: 1.3rem;
+  padding: 0.6rem;
   border: 1px solid #717171;
   border-radius: 0.8rem;
   font-weight: 500;
 }
 
-.form__step form input:focus {
+.form__field input.err {
+  border: 2px solid red;
+}
+
+.form__field input:focus {
   outline-color: #006fe6;
 }
 
-.form__step form input::placeholder {
+.form__field input::placeholder {
   color: #b0b0b0;
 }
 
-.form__step--label {
+.form__field label {
   font-size: 1.3rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+}
+
+#form-details {
+  width: 100%;
+  margin-top: 1rem;
+  display: grid;
+  align-content: center;
+  grid-template-columns: repeat(24, 1fr);
 }
 
 .plan__card {
@@ -197,11 +233,29 @@ img {
   background-color: #e8f3f9;
 }
 
-.message--error {
-  display: none;
-  color: #f00;
+.message__error {
   font-size: 1.1rem;
   font-weight: 700;
+  color: #f00;
+  transition: all 0.7s;
+}
+
+.message__error--detail {
+  margin-top: 0.2rem;
+}
+
+.message__error--s1 {
+  line-height: 1.7;
+  text-align: center;
+  font-size: 2rem;
+  position: absolute;
+  left: 30%;
+  top: 50%;
+  transform: translate(-20%, 0);
+}
+
+.message__error.hide {
+  opacity: 0;
 }
 
 .page__step {
@@ -266,7 +320,7 @@ img {
 
 .header {
   margin-bottom: auto;
-  padding-top: 2rem;
+  padding-top: 1rem;
 }
 
 .header__title {
@@ -324,7 +378,6 @@ img {
 }
 
 .preview {
-  height: 30%;
   margin: 1rem 0;
 }
 
@@ -359,21 +412,65 @@ img {
 }
 
 .gallery__nav--spin {
+  background-color: #2f2f2f;
+  color: #dddddd;
+  padding: 0.6rem 2rem;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  transition: all 0.4s;
+}
+
+.gallery__nav--spin:hover {
+  transform: translate(-50%, -0.2rem);
+}
+
+.gallery__nav--spin:active {
+  transform: translate(-50%, -0.6rem);
 }
 
 .gallery__nav--prev {
+  background-color: #636363;
+  color: #ededed;
+  padding: 0.6rem 1.4rem;
   position: absolute;
-  left: -50%;
-  transform: translateX(15%);
+  left: -55%;
+  transform: translateX(10%);
+  transition: all 0.4s;
+}
+
+.gallery__nav--prev:hover {
+  transform: translate(10%, -0.2rem);
+}
+
+.gallery__nav--prev:active {
+  transform: translate(10%, -0.6rem);
 }
 
 .gallery__nav--next {
+  background-color: #636363;
+  color: #ededed;
+  padding: 0.6rem 1.4rem;
   position: absolute;
-  right: -50%;
-  transform: translateX(-30%);
+  right: -55%;
+  transform: translateX(-20%);
+  transition: all 0.4s;
+}
+
+.gallery__nav--next:hover {
+  transform: translate(-20%, -0.2rem);
+}
+
+.gallery__nav--next:active {
+  transform: translate(-20%, -0.6rem);
+}
+
+.gallery__nav button {
+  border-radius: 20rem;
+  border: none;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+  cursor: pointer;
 }
 
 .gallery__img {
@@ -383,7 +480,7 @@ img {
 }
 
 .img {
-  height: 15rem;
+  height: 13rem;
 }
 
 .img__logo--front {
@@ -406,7 +503,7 @@ img {
 
 .img__logo--preview {
   margin-left: 0.4rem;
-  max-width: 12rem;
+  max-width: 8rem;
 }
 
 #icon-ok {
