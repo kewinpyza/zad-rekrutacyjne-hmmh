@@ -1,0 +1,95 @@
+.page {
+  &__step {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+
+    @include respond(small-tablet) {
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    &--circle {
+      font-weight: 700;
+      font-size: 1.4rem;
+      width: 30%;
+      // width: 4rem;
+      height: 4rem;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $color-white;
+
+      @include respond(small-tablet) {
+        order: 1;
+        width: 3.5rem;
+        height: 3.5rem;
+        // height: auto;
+      }
+
+      &.active {
+        background-color: $color-blue-1;
+        color: $color-dark;
+      }
+    }
+    &--content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+
+      & span {
+        text-transform: uppercase;
+        color: $color-light-1;
+        font-weight: 500;
+
+        @include respond(small-tablet) {
+          display: flex;
+          justify-content: center;
+        }
+      }
+
+      & b {
+        text-transform: uppercase;
+        color: $color-white;
+        font-size: 1.2rem;
+
+        @include respond(small-tablet) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__price {
+    margin-top: auto;
+
+    @include respond(small-tablet) {
+      margin-left: auto;
+    }
+
+    &--current {
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      color: $color-white;
+
+      @include respond(small-tablet) {
+        gap: 0.8rem;
+        font-size: 1.3rem;
+        justify-content: flex-end;
+      }
+
+      & b {
+        color: $color-yellow;
+        font-size: 1.8rem;
+
+        @include respond(small-tablet) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}

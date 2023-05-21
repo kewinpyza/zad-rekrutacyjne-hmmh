@@ -1,0 +1,25 @@
+.plan {
+  &__card {
+    border: 2px solid $color-grey-1;
+    border-radius: 0.8rem;
+    width: 15rem;
+    height: 18rem;
+    cursor: pointer;
+    padding: 1rem;
+
+    &--info {
+      margin-top: 0.2rem;
+      display: flex;
+      justify-content: center;
+
+      & b {
+        color: $color-dark;
+        font-size: 1.4rem;
+      }
+
+      & span {
+        color: $color-grey-2;
+      }
+    }
+  }
+}

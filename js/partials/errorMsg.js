@@ -40,7 +40,6 @@ class ErrorView {
       if (inpEl.id === "email" || inpEl.id === "zipCode") {
         this.showInputError(inpEl, errEl, `Pole '${label}' jest wymagane`);
       }
-      // this.showInputError(inpEl, errEl, `Pole '${label}' jest wymagane`);
     } else {
       if (!this.validateInput(inputValue, inpEl.id)) {
         this.showInputError(inpEl, errEl, `Niepoprawny format pola '${label}'`);
@@ -85,13 +84,17 @@ class ErrorView {
   }
 
   validateInput(inpValue, inpName) {
-    let regex = "";
+    let regex;
     if (inpName === "email") regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (inpName === "zipCode") regex = /^[0-9]{2}-[0-9]{3}$/;
     if (inpName === "phone") {
       regex = /^\d{3}-\d{3}-\d{3}$/;
+      if (inpValue === "") {
+        return true;
+      }
     }
-    return inpName === "phone" ? true : regex.test(inpValue);
+
+    return regex.test(inpValue);
   }
 }
 

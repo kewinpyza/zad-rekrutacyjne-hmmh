@@ -1,0 +1,144 @@
+.header {
+  margin-bottom: auto;
+  padding-top: 1rem;
+}
+
+.header__title {
+  color: #032136;
+  font-size: 2.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.header__description {
+  color: #717171;
+  font-size: 1.2rem;
+  padding-right: 0.8rem;
+  line-height: 1.5;
+}
+
+.message__error {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #f00;
+  transition: all 0.7s;
+}
+
+.message__error--detail {
+  margin-top: 0.2rem;
+}
+
+.message__error--s1 {
+  line-height: 1.7;
+  text-align: center;
+  font-size: 2rem;
+  position: absolute;
+  left: 30%;
+  top: 50%;
+  transform: translate(-20%, 0);
+}
+
+.message__error.hide {
+  opacity: 0;
+}
+
+.preview {
+  margin: 1rem 0;
+}
+
+.preview__header {
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.preview__container {
+  display: flex;
+}
+
+.preview__container--img {
+  position: relative;
+  display: inline-block;
+}
+
+.preview__container--label {
+  display: flex;
+  align-items: center;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2rem;
+}
+
+.gallery__nav {
+  position: relative;
+}
+
+.gallery__nav--spin {
+  background-color: #2f2f2f;
+  color: #dddddd;
+  padding: 0.6rem 2rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.4s;
+}
+
+.gallery__nav--spin:hover {
+  transform: translate(-50%, -0.2rem);
+}
+
+.gallery__nav--spin:active {
+  transform: translate(-50%, -0.6rem);
+}
+
+.gallery__nav--prev {
+  background-color: #636363;
+  color: #ededed;
+  padding: 0.6rem 1.4rem;
+  position: absolute;
+  left: -55%;
+  transform: translateX(10%);
+  transition: all 0.4s;
+}
+
+.gallery__nav--prev:hover {
+  transform: translate(10%, -0.2rem);
+}
+
+.gallery__nav--prev:active {
+  transform: translate(10%, -0.6rem);
+}
+
+.gallery__nav--next {
+  background-color: #636363;
+  color: #ededed;
+  padding: 0.6rem 1.4rem;
+  position: absolute;
+  right: -55%;
+  transform: translateX(-20%);
+  transition: all 0.4s;
+}
+
+.gallery__nav--next:hover {
+  transform: translate(-20%, -0.2rem);
+}
+
+.gallery__nav--next:active {
+  transform: translate(-20%, -0.6rem);
+}
+
+.gallery__nav button {
+  border-radius: 20rem;
+  border: none;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.gallery__img {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}

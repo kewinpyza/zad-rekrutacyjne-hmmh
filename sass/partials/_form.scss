@@ -1,0 +1,160 @@
+.form {
+  max-width: 800px;
+  width: 90%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  background-color: $color-white;
+
+  &__container {
+    display: flex;
+    gap: 1.4rem;
+    padding: 1rem;
+
+    @include respond(small-tablet) {
+      flex-direction: column;
+    }
+  }
+
+  &__sidebar {
+    background: linear-gradient(45deg, #013d7d, #00b7ff);
+    width: 30rem;
+    height: 60rem;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 0.8rem;
+
+    &--circles {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      @include respond(small-tablet) {
+        flex-direction: row;
+      }
+    }
+
+    @include respond(small-tablet) {
+      width: 100%;
+      height: 10rem;
+      padding: 1.2rem 2.5rem 0.8rem;
+    }
+  }
+
+  &__step {
+    width: 90%;
+    // display: flex;
+    flex-direction: column;
+    justify-content: center;
+    display: none;
+    position: relative;
+
+    @include respond(small-tablet) {
+      width: 100%;
+    }
+
+    &:nth-of-type(2) {
+      display: flex;
+    }
+
+    &:nth-of-type(6) {
+      // align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: auto;
+
+      & .header {
+        line-height: 2;
+        padding: 0;
+
+        &__title {
+          font-size: 2rem;
+        }
+
+        &__description {
+          color: $color-grey-2;
+          font-size: 1.2rem;
+          padding: 0 1rem;
+        }
+      }
+    }
+
+    &:nth-of-type(2) form {
+      flex-direction: row;
+      margin-top: 2rem;
+      gap: 2.5rem;
+
+      @include respond(small-tablet) {
+        justify-content: flex-start;
+        gap: 1rem;
+      }
+    }
+
+    & form {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: center;
+      gap: 1rem;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    grid-column: span 8;
+    justify-items: baseline;
+
+    &--bnum {
+      grid-column: span 6;
+    }
+
+    &--zipcode {
+      grid-row: 3;
+      grid-column: span 7;
+    }
+
+    &--phone {
+      grid-column: span 7;
+    }
+
+    &--city,
+    &--email {
+      grid-column: span 10;
+    }
+
+    & input {
+      font-size: 1.3rem;
+      padding: 0.6rem;
+      border: 1px solid $color-grey-3;
+      border-radius: 0.8rem;
+      font-weight: 500;
+
+      &.err {
+        border: 2px solid $color-red;
+      }
+
+      &:focus {
+        outline-color: $color-blue;
+      }
+
+      &::placeholder {
+        color: $color-grey-1;
+      }
+    }
+
+    & label {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+#form-details {
+  width: 100%;
+  margin-top: 1rem;
+  display: grid;
+  align-content: center;
+  grid-template-columns: repeat(24, 1fr);
+}

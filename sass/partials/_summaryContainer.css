@@ -1,0 +1,85 @@
+.summary {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.summary__container {
+  background-color: #e8f3f9;
+  padding: 1.5rem;
+  margin-top: 3rem;
+}
+
+.summary__plans {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  gap: 1.2rem;
+}
+
+.summary__details {
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.summary__details--price {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  color: #787878;
+  margin-bottom: 1rem;
+}
+
+.summary__details--price b {
+  color: #bf3a06;
+  font-size: 1.4rem;
+}
+
+.summary__details--header {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.summary__addons {
+  font-size: 1.1rem;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.summary__plan {
+  display: flex;
+  justify-content: space-between;
+  color: #0d0827;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.summary__addon {
+  display: flex;
+  justify-content: space-between;
+  color: #878787;
+  font-weight: 500;
+}
+
+.summary__addon--price {
+  color: #0d0827;
+}
+
+.summary__total--price {
+  padding: 2.5rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #9c9c9c;
+}
+
+.summary__total--price b {
+  color: #bf3a06;
+  font-size: 1.8rem;
+}

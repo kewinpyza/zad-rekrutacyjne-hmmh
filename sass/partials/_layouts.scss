@@ -1,0 +1,159 @@
+.header {
+  margin-bottom: auto;
+  padding-top: 1rem;
+
+  &__title {
+    color: $color-dark;
+    font-size: 2.2rem;
+    margin-bottom: 0.4rem;
+  }
+  &__description {
+    color: $color-grey-3;
+    font-size: 1.2rem;
+    padding-right: 0.8rem;
+    line-height: 1.5;
+  }
+}
+
+.message {
+  &__error {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $color-red;
+    transition: all 0.7s;
+
+    &--detail {
+      margin-top: 0.2rem;
+    }
+
+    &--s1 {
+      // display: none;
+      line-height: 1.7;
+      text-align: center;
+      font-size: 2rem;
+      position: absolute;
+      left: 30%;
+      top: 50%;
+      transform: translate(-20%, 0);
+
+      @include respond(small-tablet) {
+        left: 100%;
+        transform: translate(-100%, -55%);
+        font-size: 1.4rem;
+        line-height: 1.3;
+        width: 15rem;
+      }
+    }
+
+    &.hide {
+      opacity: 0;
+    }
+  }
+}
+
+.preview {
+  margin: 1rem 0;
+
+  @include respond(small-tablet) {
+    margin: 4rem 0;
+  }
+
+  &__header {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+  &__container {
+    display: flex;
+
+    &--img {
+      position: relative;
+      display: inline-block;
+    }
+    &--label {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2rem;
+  &__nav {
+    position: relative;
+
+    @include respond(small-tablet) {
+      margin-bottom: 3rem;
+    }
+
+    &--spin {
+      background-color: $color-dark;
+      color: $color-white;
+      padding: 0.6rem 2rem;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: all 0.4s;
+
+      &:hover {
+        transform: translate(-50%, -0.2rem);
+      }
+
+      &:active {
+        transform: translate(-50%, -0.6rem);
+      }
+    }
+
+    &--prev {
+      background-color: $color-grey-3;
+      color: $color-white;
+      padding: 0.6rem 1.4rem;
+      position: absolute;
+      left: -55%;
+      transform: translateX(10%);
+      transition: all 0.4s;
+
+      &:hover {
+        transform: translate(10%, -0.2rem);
+      }
+
+      &:active {
+        transform: translate(10%, -0.6rem);
+      }
+    }
+    &--next {
+      background-color: $color-grey-3;
+      color: $color-white;
+      padding: 0.6rem 1.4rem;
+      position: absolute;
+      right: -55%;
+      transform: translateX(-20%);
+      transition: all 0.4s;
+
+      &:hover {
+        transform: translate(-20%, -0.2rem);
+      }
+
+      &:active {
+        transform: translate(-20%, -0.6rem);
+      }
+    }
+    & button {
+      border-radius: 20rem;
+      border: none;
+      box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.5);
+      // background-size: 200% auto;
+      transition: 0.5s;
+      cursor: pointer;
+    }
+  }
+  // &__container {
+  // }
+  &__img {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+}

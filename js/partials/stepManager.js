@@ -82,6 +82,10 @@ class StepManager {
         (container) => container.dataset.tshirtSide === tshirtSide
       );
 
+      if (this._errorMsg && tshirtSelect.classList.contains("selected")) {
+        this._errorMsg.classList.add("hide");
+      }
+
       if (tshirtSelect.classList.contains("selected")) {
         previewContainer.insertAdjacentHTML("beforeend", html);
         this._labelPreview.classList.remove("hidden");
